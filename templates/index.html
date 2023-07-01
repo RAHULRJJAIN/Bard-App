@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Text Generator</title>
+  </head>
+  <body>
+    <h1>Text Generator</h1>
+    <form method="POST">
+      <label for="content">Enter the content you want to generate:</label>
+      <input type="text" name="content" id="content" required>
+      
+      <label for="mood_of_content">Enter the type of content:</label>
+      <input type="text" name="mood_of_content" id="mood_of_content" required>
+      
+      <label for="platform">Enter the platform you want to post the generated text:</label>
+      <select name="platform" id="platform" required>
+        <option value="Instagram">Instagram</option>
+        <option value="LinkedIn Post">LinkedIn Post</option>
+        <option value="Notion Article">Notion Article</option>
+        <option value="Tweet">Tweet</option>
+      </select>
+      
+      <label for="length">Enter the length of the content you want to generate:</label>
+      <input type="number" name="length" id="length" min="50" max="700" required>
+      
+      <button type="submit">Generate</button>
+    </form>
+    
+    {% if tweet %}
+    <h2>Generated tweet:</h2>
+    <p>{{ tweet }}</p>
+    {% endif %}
+  </body>
+</html>
